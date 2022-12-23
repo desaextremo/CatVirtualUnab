@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Libros</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <!--Sección regresar-->   
+        <a href="index.html" target="_self"> <img src="img/home.png" alt="Regresar" title="Regresar"> Regresar</a>
+    </div>
+    <br><br> 
+    <!--Cabecera principal-->
+    <h1>Listado de Libros</h1>
+
+    <!--Seccion nuevo Libros-->
+    <div id="new">
+        <h2>Nuevo Libros</h2>
+        <label for="isbn">Isbn: </label>
+        <input type="text" id="isbn" required>
+        <br><br>
+        <label for="categoryId">Categoría: </label>
+        <select id="categoryId">
+        </select>
+        <br><br>
+        <label for="title">Título: </label>
+        <input type="text" id="title" required>
+        <br><br>
+        <label for="authorId">Autor: </label>
+        <select id="authorId">
+        </select>
+        <br><br>
+        <label for="pages">Páginas: </label>
+        <input type="number" id="pages" required maxlength="4">
+        <br><br>
+        <label for="price">Precio: </label>
+        <input type="number" id="price" required maxlength="8">
+        <br><br>
+        <label for="year">Año: </label>
+        <input type="number" id="year" required maxlength="4">
+        <br><br>
+        <label for="description">Descripción: </label>
+        <textarea id="description"></textarea>
+        <br><br>
+        <button id="new_Libros">Ingresar</button>
+        <button id="cancel_new_Libros">Cancelar</button>
+    </div>
+
+    <!--Seccion modificar Libros-->
+    <div id="save">
+        <h2>Modificar Libros</h2>
+        <label for="id_edit">Isbn del Libro: </label>
+        <input type="text" id="id_edit" disabled>
+        <br><br>
+        <label for="categoryId_Edit">Categoría: </label>
+        <select id="categoryId_Edit">
+        </select>
+        <br><br>
+        <label for="title_edit">Título: </label>
+        <input type="text" id="title_edit" required>
+        <br><br>
+        <label for="authorId_Edit">Autor: </label>
+        <select id="authorId_Edit">
+        </select>
+        <br><br>
+        <label for="pages_edit">Páginas: </label>
+        <input type="number" id="pages_edit" required maxlength="4">
+        <br><br>
+        <label for="price_edit">Precio: </label>
+        <input type="number" id="price_edit" required maxlength="8">
+        <br><br>
+        <label for="year_edit">Año: </label>
+        <input type="number" id="year_edit" required maxlength="4">
+        <br><br>
+        <label for="description_edit">Descripción: </label>
+        <textarea id="description_edit"></textarea>
+        <br><br>
+        <button id="save_Libros">Guardar</button>
+        <button id="cancel_save_Libros">Cancelar</button>
+    </div>
+
+    <!--Seccion eliminar Libros-->
+    <div id="delete">
+        <h2>Eliminar Libros</h2>
+        <p>Esta seguro de eliminar el Libros:</p>
+        <input type="text" id="id_delete" hidden>
+        <ol id="list_delete">
+
+        </ol>
+        <button id="delete_Libros">Borrar</button>
+        <button id="cancel_delete_Libros">Cancelar</button>
+    </div>
+
+    <!--Seccion listar Libros-->
+    <div id="list_data">
+        <h2>Libros</h2>
+        <button id="insert_Libros" onclick="new_()">Nuevo Libros</button>
+        <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Isbn</th>
+                    <th>Categoría</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Páginas</th>
+                    <th>Año</th>
+                    <th>Precio</th>
+                    <th colspan=2>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/libros/libros.js"></script>
+</body>
+
+</html>

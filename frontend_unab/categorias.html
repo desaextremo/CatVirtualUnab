@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Categorías</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div>
+        <!--Sección regresar-->   
+        <a href="index.html" target="_self"> <img src="img/home.png" alt="Regresar" title="Regresar"> Regresar</a>
+    </div>
+    <br><br> 
+    <!--Cabecera principal-->
+    <h1>Listado de Categorias</h1>
+
+    <!--Seccion nueva categoria-->
+    <div id="new">
+        <h2>Nueva Categoria</h2>
+        <label for="name">Nombre de la Categoría: </label>
+        <input type="text" id="name" required>
+        <br><br>
+        <button id="new_category">Ingresar</button>
+        <button id="cancel_new_category">Cancelar</button>
+    </div>
+
+    <!--Seccion modificar categoria-->
+    <div id="save">
+        <h2>Modificar Categoria</h2>
+        <label for="id_edit" hidden>Código de la Categoría: </label>
+        <input type="text" id="id_edit" hidden>
+        <label for="name_edit">Nombre de la Categoría: </label>
+        <input type="text" id="name_edit">
+        <br><br>
+        <button id="save_category">Guardar</button>
+        <button id="cancel_save_category">Cancelar</button>
+    </div>
+
+    <!--Seccion eliminar categoria-->
+    <div id="delete">
+        <h2>Eliminar Categoria</h2>
+        <p>Esta seguro de eliminar la categoría:</p>
+        <input type="text" id="id_delete" hidden>
+        <ol id="list_delete">
+            
+        </ol>
+        <button id="delete_category">Guardar</button>
+        <button id="cancel_delete_category">Cancelar</button>
+    </div>
+
+    <!--Seccion listar categorias-->
+    <div id="list_data">
+        <h2>Categorias</h2>
+        <button id="insert_category" onclick="new_()">Nueva Categoría</button>
+        <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre Categoría</th>
+                    <th colspan=2>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+                                
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/categorias/categorias2.js"></script>
+</body>
+</html>

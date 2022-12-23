@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar libros x Indice</title>
+</head>
+
+<body>
+    <div>
+        <!--Sección regresar-->   
+        <a href="index.html" target="_self"> <img src="img/home.png" alt="Regresar" title="Regresar"> Regresar</a>
+    </div>
+    <br><br> 
+    <div id="parametros">
+        <label for="liminf">Precio Inicial: </label>
+        <input type="number" maxlength="8" id="liminf">
+        <label for="limsup">Precio Final: </label>
+        <input type="number" maxlength="8" id="limsup">
+        <button id="query">Consultar</button>
+    </div>
+    <hr>
+    <div>
+        <h2>Consultar libros x Indice</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Isbn</th>
+                    <th>Categoría</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Páginas</th>
+                    <th>Año</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/consultas/consultarlibrosxrangoprecio.js"></script>
+</body>
+</html>
