@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--Cabecera principal-->
+        <h1>Listado de Libros</h1>
+        <!--Sección regresar-->
+        <a href="index.html" target="_self"><img src="img/home.png" alt="Regresar" title="Regresar"></a>
+        <button class="btn btn-primary" id="insert_Libros" onclick="new_()">Nuevo Libros</button>
+        <hr>
+        <!--Seccion nuevo Libros-->
+        <div id="new">
+            <h2>Nuevo Libros</h2>
+            <div class="form-group">
+                <label for="isbn">Isbn: </label>
+                <input class="form-control" type="text" id="isbn" required>
+            </div>
+            <div class="form-group">
+                <label for="categoryId">Categoría: </label>
+                <select class="form-select" id="categoryId">
+                </select>
+            </div>    
+            <div class="form-group">
+                <label for="title">Título: </label>
+                <input class="form-control" type="text" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="authorId">Autor: </label>
+                <select class="form-select" id="authorId">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pages">Páginas: </label>
+                <input class="form-control" type="number" id="pages" required maxlength="4">
+            </div>
+            <div class="form-group">
+                <label for="price">Precio: </label>
+                <input class="form-control" type="number" id="price" required maxlength="8">
+            </div>
+            <div class="form-group">
+
+            </div>
+            <div class="form-group">
+                <label for="year">Año: </label>
+                <input class="form-control" type="number" id="year" required maxlength="4">
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción: </label>
+                <textarea class="form-control" id="description"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" id="new_Libros">Ingresar</button>
+                <button class="btn btn-secondary" id="cancel_new_Libros">Cancelar</button>
+            </div>
+        </div>
+
+        <!--Seccion modificar Libros-->
+        <div id="save">
+            <h2>Modificar Libros</h2>
+            <div class="form-group">
+                <label for="id_edit">Isbn del Libro: </label>
+                <input class="form-control" type="text" id="id_edit" disabled>
+            </div>
+            <div class="form-group">
+                <label for="categoryId_Edit">Categoría: </label>
+                <select class="form-select" id="categoryId_Edit">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title_edit">Título: </label>
+                <input class="form-control" type="text" id="title_edit" required>
+            </div>
+            <div class="form-group">
+                <label for="authorId_Edit">Autor: </label>
+                <select class="form-select" id="authorId_Edit">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pages_edit">Páginas: </label>
+                <input class="form-control" type="number" id="pages_edit" required maxlength="4">
+            </div>
+            <div class="form-group">
+                <label for="price_edit">Precio: </label>
+                <input class="form-control" type="number" id="price_edit" required maxlength="8">
+            </div>
+            <div class="form-group">
+                <label for="year_edit">Año: </label>
+                <input class="form-control" type="number" id="year_edit" required maxlength="4">
+            </div>
+            <div class="form-group">
+                <label for="description_edit">Descripción: </label>
+                <textarea class="form-control" id="description_edit"></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <button class="btn btn-primary" id="save_Libros">Guardar</button>
+                <button class="btn btn-secondary" id="cancel_save_Libros">Cancelar</button>
+            </div>
+        </div>
+
+        <!--Seccion eliminar Libros-->
+        <div id="delete">
+            <h2>Eliminar Libros</h2>
+            <p>Esta seguro de eliminar el Libros:</p>
+            <input type="text" id="id_delete" hidden>
+            <ol id="list_delete">
+
+            </ol>
+            <button class="btn btn-primary" id="delete_Libros">Borrar</button>
+            <button class="btn btn-secondary" id="cancel_delete_Libros">Cancelar</button>
+        </div>
+
+        <!--Seccion listar Libros-->
+        <div id="list_data">
+            <table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>Isbn</th>
+                        <th>Categoría</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Páginas</th>
+                        <th>Año</th>
+                        <th>Precio</th>
+                        <th colspan=2>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/libros/libros.js"></script>
+</body>
+
+</html>

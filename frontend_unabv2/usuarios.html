@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--Cabecera principal-->
+        <h1>Listado de Usuarios</h1>
+        <!--Sección regresar-->
+        <a href="index.html" target="_self"><img src="img/home.png" alt="Regresar" title="Regresar"></a>
+        <button class="btn btn-primary" id="insert_Usuario" onclick="new_()">Nuevo Usuario</button>
+        <!--Seccion nuevo Usuario-->
+        <id id="new">
+            <form class="row g-3">
+                <h2>Nuevo Usuario</h2>
+                <div class="form-group">
+                    <label for="fisrtName">Nombres: </label>
+                    <input class="form-control" type="text" id="fisrtName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellidos: </label>
+                    <input class="form-control" type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthDay">Fecha de Nacimiento: </label>
+                    <input class="form-control" type="date" id="birthDay" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección: </label>
+                    <input class="form-control" type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="cellPhone">Célular: </label>
+                    <input class="form-control" type="tel" id="cellPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input class="form-control" type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input class="form-control" type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Rol: </label>
+                    <select id="role" class="form-select">
+                        <option value="USER">USER</option>
+                        <option value="ADMIN">ADMIN</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Género: </label>
+                    <select id="gender" class="form-select">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" id="new_Usuario">Ingresar</button>
+                    <button class="btn btn-secondary" id="cancel_new_Usuario">Cancelar</button>
+                </div>
+    </div>
+
+    <!--Seccion modificar Usuario-->
+    <div id="save">
+        <h2>Modificar Usuario</h2>
+        <div class="form-group">
+            <label for="id_edit" hidden>Código del Usuario: </label>
+            <input class="form-control" type="text" id="id_edit" hidden>
+        </div>
+        <div class="form-group">
+            <label for="fisrtName_edit">Nombres: </label>
+            <input class="form-control" type="text" id="fisrtName_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName_edit">Apellidos: </label>
+            <input class="form-control" type="text" id="lastName_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="birthDay_edit">Fecha de Nacimiento: </label>
+            <input class="form-control" type="date" id="birthDay_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="address_edit">Dirección: </label>
+            <input class="form-control" type="text" id="address_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="cellPhone_edit">Célular: </label>
+            <input class="form-control" type="tel" id="cellPhone_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="email_edit">Email: </label>
+            <input class="form-control" type="email" id="email_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="password_edit">Password: </label>
+            <input class="form-control" type="password" id="password_edit" required>
+        </div>
+        <div class="form-group">
+            <label for="role_edit">Rol: </label>
+            <select class="form-select" id="role_edit">
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="gender_edit">Género: </label>
+            <select class="form-select" id="gender_edit">
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-primary" id="save_Usuario">Guardar</button>
+            <button class="btn btn-secondary" id="cancel_save_Usuario">Cancelar</button>
+        </div>
+    </div>
+
+    <!--Seccion eliminar Usuario-->
+    <div id="delete">
+        <h2>Eliminar Usuario</h2>
+        <p>Esta seguro de eliminar el Usuario:</p>
+        <input type="text" id="id_delete" hidden>
+        <ol id="list_delete">
+
+        </ol>
+        <button class="btn btn-primary" id="delete_Usuario">Borrar</button>
+        <button class="btn btn-secondary" id="cancel_delete_Usuario">Cancelar</button>
+    </div>
+
+    <!--Seccion listar Usuarios-->
+    <div id="list_data">
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Email</th>
+                    <th>Célular</th>
+                    <th colspan=2>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/usuarios/usuarios.js"></script>
+</body>
+
+</html>
